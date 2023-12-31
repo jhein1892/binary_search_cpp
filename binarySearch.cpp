@@ -22,10 +22,10 @@ void generateArray(int* arr)
 }
 
 // Set up function takes sorted array, and finds number x
-int searchArray(int* arr)
-{
+// int searchArray(int* arr)
+// {
 
-}
+// }
 
 int main()
 {
@@ -33,8 +33,22 @@ int main()
     // Initialize array
     int array[12];
     
+    // Fill in array
     generateArray(array);
     cout << "After" << endl;
+
+    // Find mid point
+    int mid = array[6];
+    cout << "Mid point: " << mid << endl;
+
+    // Generate random goal number
+    srand((unsigned) time(NULL));
+    int random = array[0] + (rand() % 12);
+
+    
+
+
+
     for(int i = 0; i < 12; ++i){
         cout << array[i] << endl;
     }
