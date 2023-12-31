@@ -35,22 +35,36 @@ int main()
     
     // Fill in array
     generateArray(array);
-    cout << "After" << endl;
 
     // Find mid point
-    int mid = array[6];
-    cout << "Mid point: " << mid << endl;
+    int mid = 6;
+
+    cout << "Here is my the random sorted array: ";
+    for(int i = 0; i < 12; ++i){
+        cout << array[i] << " ";
+    }
+    cout << "\n";
 
     // Generate random goal number
     srand((unsigned) time(NULL));
     int random = array[0] + (rand() % 12);
 
-    
+    int bottom = 0;
+    int top = 11;
+    while(array[mid] != random)
+    {
+        if(array[mid] > random){ top = mid - 1; }
+        else{ bottom = mid + 1; }
 
+        mid = (bottom + top) / 2;
+        if(bottom == top) break;
+    }    
 
-
-    for(int i = 0; i < 12; ++i){
-        cout << array[i] << endl;
+    if(array[mid] == random){
+        cout << "Number " << random << " is at index " << mid << endl;
+    } else {
+        cout <<"Something is wrong" << endl;
     }
+    
     return 0;
 }
