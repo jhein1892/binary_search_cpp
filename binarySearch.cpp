@@ -6,16 +6,15 @@ using namespace std;
 
 
 // set up a function to randomly generate a sorted array of n length
-auto generateArray(int length) -> int(*)[5]
+void generateArray(int* arr)
 {
-    int array[5];
     srand((unsigned) time(NULL));
     int random = rand() % 100;
-    for(int i = 0; i < length; ++i){
-        array[i] = random;
+    for(int i = 0; i < 5; ++i){
+        *arr = random;
+        ++arr;
         ++random;
-    }
-    return &array;
+    };
 }
 
 // Set up function takes sorted array, and finds number x
@@ -24,8 +23,11 @@ auto generateArray(int length) -> int(*)[5]
 int main()
 {
     std::cout << "Lets start a binary Search Algo\n";
-    auto arrayPntr = generateArray(5);
-    cout << arrayPntr[0] << endl;
-
+    int array[5];
+    generateArray(array);
+    cout << "After" << endl;
+    for(int i = 0; i < 5; ++i){
+        cout << array[i] << endl;
+    }
     return 0;
 }
