@@ -3,8 +3,6 @@
 
 using namespace std;
 
-
-
 // set up a function to randomly generate a sorted array of n length
 void generateArray(int* arr)
 {
@@ -21,15 +19,9 @@ void generateArray(int* arr)
     };
 }
 
-// Set up function takes sorted array, and finds number x
-// int searchArray(int* arr)
-// {
-
-// }
-
+// As an added feature I could require the user to input a size for the array
 int main()
 {
-    std::cout << "Lets start a binary Search Algo\n";
     // Initialize array
     int array[12];
     
